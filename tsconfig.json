@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "importHelpers": true,
+    "module": "commonjs",
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": true,
+    "target": "es2017",
+    "resolveJsonModule": true,
+    "composite": true
+  },
+  "include": [
+    "src/**/*",
+    "src/configs-for-config/*.json"
+  ]
+}

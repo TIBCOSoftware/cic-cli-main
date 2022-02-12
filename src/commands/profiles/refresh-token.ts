@@ -1,0 +1,48 @@
+/**
+ * Copyright 2022. TIBCO Software Inc.
+ * This file is subject to the license terms contained
+ * in the license file that is distributed with this file.
+ */
+
+import { ux, TCBaseCommand } from '@tibco-software/cic-cli-core';
+
+export default class ConfigRefreshToken extends TCBaseCommand {
+  static description = 'describe the command here';
+
+  static flags = {
+    ...TCBaseCommand.flags,
+  };
+
+  async run() {
+    const { flags } = this.parse(ConfigRefreshToken);
+
+    let config = this.getProfileConfig();
+    if (!flags.profile || flags.profile === config.defaultProfile) {
+      let ans = await ux.promptChoices(
+        `Are you sure you want to refresh token of default profile i.e ${config.defaultProfile}`,
+        ['yes', 'no']
+      );
+      if (ans === 'no') {
+        this.exit();
+      }
+    }
+
+    let profile = config.getProfileByName(flags.profile);
+
+    if (!profile) {
+      this.error(`Profile ${flags.profile} not found`);
+    }
+
+    this.log('Will refresh token only if it is expired');
+    let req = this.getTCRequest();
+    if (await req.getValidToken()) {
+      this.log('Token refreshed sucessfully');
+    }
+  }
+
+  getPluginName() {
+    if (this.id) {
+      return this.config.findCommand(this.id)?.pluginName;
+    }
+  }
+}
