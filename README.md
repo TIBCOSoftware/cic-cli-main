@@ -207,7 +207,7 @@ This CLI has a plugin-based architecture, that can be extended by creating plugi
 Plugins developed by us so far:
 | Name                                                                                                | Description                                                                               |
 |-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| [cli-plugin-asyncapi](https://www.npmjs.com/package/@tibco/cli-plugin-asyncapi) | This plugin is helpful to transform your asyncapi spec(2.1.0) into sample flogo template. |
+| [cli-plugin-asyncapi](https://www.npmjs.com/package/@tibco-software/cli-plugin-asyncapi) | This plugin is helpful to transform your asyncapi spec(2.1.0) into sample flogo template. |
 
 ## Developers
 
