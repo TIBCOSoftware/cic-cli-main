@@ -2,6 +2,21 @@
 
 This CLI will help you to quickly interact with TIBCO Cloud™ capabilities using terminal and would provide simplicity to manage your local development and build environments.
 
+## Table of Contents
+1. [Installation](#installation)
+    1.  [Prerequisites](#prerequisites)
+    2.  [Download Build](#download)
+    3.  [Steps](#steps)
+    4.  [Proxy Settings](#proxy)
+    5.  [Verify Installation](#verify-installation)
+2.  [Command Format](#command-format)
+3.  [Configure CLI](#configure-cli)
+4.  [Common Command Flags](#comman-command-flags)
+5.  [Plugins](#plugins)
+6.  [Developers](#developers)
+7.  [Known Issues](#known-issues)
+8.  [Issues](#issues)
+7.  [License](#license) 
 ## Installation
 
 CLI is distributed using tarballs. Download tarball from below links based on your machine OS.
@@ -212,6 +227,29 @@ Plugins developed by us so far:
 ## Developers
 
 If you are interested to develop some CLI plugin and attach it to CLI. Checkout [oclif](https://oclif.io) plugin dev, as this CLI is based on oclif framework. While development use this package [@tibco-software/cic-cli-core](https://www.npmjs.com/package/@tibco-software/cic-cli-core) as it will ease your development of commands to certain extent.
+
+## Known Issues
+
+### For macOS
+
+#### Issue
+In case you get any of these below errors while `tibco profiles:initialize`
+
+<div white-space="nowrap">
+<img src="./media/keytar-issue1.png" height="400"/>
+
+
+
+<img src="./media/keytar-issue2.png" height="400" width ="280"/>
+</div>
+
+#### Solution
+1. Navigate to the path `Apple menu->System Preferences->Security & Privacy->General`.
+2. Click on `Allow anyway` button.
+
+
+<img src="./media/keytar-soln.png" height="400"/>
+
 
 ## Issues
 
