@@ -1,6 +1,6 @@
 {
   "name": "@tibco-software/cic-cli-main",
-  "version": "1.0.0-beta",
+  "version": "1.0.0-beta.1",
   "author": "TIBCO Software",
   "bin": {
     "tibco": "./bin/run"
@@ -11,7 +11,7 @@
     "@oclif/config": "^1.17.0",
     "@oclif/plugin-help": "^3.2.2",
     "@oclif/plugin-plugins": "^1.10.1",
-    "@tibco-software/cic-cli-core": "^1.0.0-beta",
+    "@tibco-software/cic-cli-core": "^1.0.0-beta.1",
     "p-event": "^4.2.0",
     "tslib": "^1.14.1"
   },
@@ -50,7 +50,7 @@
     "build": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme --multi",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md",
-    "pack": "npm run build && oclif-dev pack --targets darwin-x64",
+    "pack": "npm run build && oclif-dev pack --targets darwin-x64,darwin-arm64,linux-arm64,linux-arm64,win32-x64,win32-x86",
     "lint": "eslint . --ext .ts --config .eslintrc"
   },
   "overrides": {
