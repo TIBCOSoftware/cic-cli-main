@@ -71,7 +71,7 @@ Should have libsecret installed for linux based machines. If not, use below comm
   PATH=~/tibco-cli/bin:$PATH
   ```
 
-#### For windows
+#### For Windows
 - Download archive from above [download table](#download) or using curl
 - Extract the archive
 - Set path variable to extracted folder's bin folder in environment variables
@@ -108,7 +108,7 @@ tibco asyncapi:transform --to flogo --from ./myasyncapi.yml
 ### Flags
 For long flags use `--`  \
 For short flags use `-`  \
-Flags can be mentioned in multiple ways \ 
+Flags can be mentioned in multiple ways:
 ```
 tibco apps:create --name myNodeJsAPP
 tibco apps:create --name=myNodeJsAPP
@@ -134,7 +134,7 @@ Currently the TIBCO Cloud organizations and regions are tied to the profile. \
 If you need to switch to different org or region then you need to add profile to the CLI configuration. This can be done using command `tibco profiles:add`. \
 Then while executing commands just need to pass the profile name as a command option.  \
 For e.g `tibco tcam:list-apis --profile eu-user` \
-Profiles data is stored as json in below format. \
+Profiles data is stored as json in below format.
 
 ```json
 [
@@ -170,7 +170,7 @@ Confidential data like tokens, refresh tokens and client secret are stored at:
 ## Comman Command Flags
 
 Common flags are availabe to most of the commands of CLI. \
-They may be disabled for specific commands.  \
+They may be disabled for specific commands.
 
 ### --profile <string>
 
