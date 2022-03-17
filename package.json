@@ -50,7 +50,7 @@
     "build": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme --multi",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md",
-    "pack": "npm run build && oclif-dev pack --targets darwin-x64,darwin-arm64,linux-arm64,linux-arm64,win32-x64,win32-x86",
+    "pack": "npm run build && oclif-dev pack --targets darwin-x64,darwin-arm64,linux-arm64,linux-x64,win32-x64,win32-x86",
     "lint": "eslint . --ext .ts --config .eslintrc"
   },
   "overrides": {
