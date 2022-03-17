@@ -20,9 +20,9 @@ Should have libsecret installed for linux based machines. If not, use below comm
 
 | OS        |     Build      |
 | --------- | :-----------:  | 
-| Windows   | [tibco-cli-win-x86.zip](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-win-x86.zip)<br>[tibco-cli-win-x64.zip](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-win-x64.zip) | 
-| macOS     | [tibco-cli-mac-x64.tar.gz](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-mac-x64.tar.gz)<br> [tibco-cli-mac-arm.tar.gz](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-mac-arm.tar.gz)  |
-| Linux   | [tibco-cli-linux-x64.tar.gz](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-linux-x64.tar.gz)<br>[tibco-cli-linux-arm.tar.gz](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-linux-arm.tar.gz)|
+| Windows   | [tibco-cli-win-x86.zip](https://github.com/TIBCOSoftware/cic-cli-main/releases/download/v1.0.0-beta.1/tibco-cli-win-x86.zip)<br>[tibco-cli-win-x64.zip](https://github.com/TIBCOSoftware/cic-cli-main/releases/download/v1.0.0-beta.1/tibco-cli-win-x64.zip) | 
+| macOS     | [tibco-cli-mac-x64.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/download/v1.0.0-beta.1/tibco-cli-mac-x64.tar.gz)<br> [tibco-cli-mac-arm.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/download/v1.0.0-beta.1/tibco-cli-mac-arm.tar.gz)  |
+| Linux   | [tibco-cli-linux-x64.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/download/v1.0.0-beta.1/tibco-cli-linux-x64.tar.gz)<br>[tibco-cli-linux-arm.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/download/v1.0.0-beta.1/tibco-cli-linux-arm.tar.gz)|
 
 
 ### Steps
