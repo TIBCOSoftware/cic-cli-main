@@ -7,7 +7,7 @@
 import { ux, TCBaseCommand } from '@tibco-software/cic-cli-core';
 
 export default class ConfigRefreshToken extends TCBaseCommand {
-  static description = 'describe the command here';
+  static description = 'Refresh a token for a profile';
 
   static flags = {
     ...TCBaseCommand.flags,
@@ -19,7 +19,7 @@ export default class ConfigRefreshToken extends TCBaseCommand {
     let config = this.getProfileConfig();
     if (!flags.profile || flags.profile === config.defaultProfile) {
       let ans = await ux.promptChoices(
-        `Are you sure you want to refresh token of default profile i.e ${config.defaultProfile}`,
+        `Are you sure you want to refresh token for a default profile i.e ${config.defaultProfile}`,
         ['yes', 'no']
       );
       if (ans === 'no') {

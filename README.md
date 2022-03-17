@@ -14,21 +14,25 @@ Should have libsecret installed for linux based machines. If not, use below comm
 - Red Hat-based: `sudo yum install libsecret-devel`
 - Arch Linux: `sudo pacman -S libsecret`
 
-### Download link
+### Download
 
-| OS        |     Link      |
-| --------- | :-----------: |
-| linux-x64 | `curl <link>` |
-| linux-arm | `curl <link>` |
-| macOS     | `curl <link>` |
-| Windows   | `curl <link>` |
+#### Builds
+
+| OS        |     Build      |
+| --------- | :-----------:  | 
+| Windows   | [tibco-cli-win-x86.zip](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-win-x86.zip)<br>[tibco-cli-win-x64.zip](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-win-x64.zip) | 
+| macOS     | [tibco-cli-mac-x64.tar.gz](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-mac-x64.tar.gz)<br> [tibco-cli-mac-arm.tar.gz](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-mac-arm.tar.gz)  |
+| Linux   | [tibco-cli-linux-x64.tar.gz](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-linux-x64.tar.gz)<br>[tibco-cli-linux-arm.tar.gz](https://github.com/TIBCOSoftware/labs-air/releases/download/v1.0.0-beta.1/tibco-cli-linux-arm.tar.gz)|
+
 
 ### Steps
 
-- Download tar from above link
+#### For Linux and macOS
+
+- Download archive from below link
 
   ```bash
-  curl <link>
+  curl https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/{build name from above table} -fsSL -O
   ```
 
 - Create a directory to keep installed CLI
@@ -40,7 +44,7 @@ Should have libsecret installed for linux based machines. If not, use below comm
 - Extract tar package to the created folder
 
   ```bash
-  tar -xf <file-name> -C ~/tibco-cli --strip-components 1
+  tar -xf <build file name> -C ~/tibco-cli --strip-components 1
   ```
 
 - Set up envrionment variables for current terminal session
@@ -67,9 +71,13 @@ Should have libsecret installed for linux based machines. If not, use below comm
   PATH=~/tibco-cli/bin:$PATH
   ```
 
-For windows, extract tar using [7zip](https://www.7-zip.org/).\
-Set path to extraced folder's bin folder in environment variables by navigating to\
-This PC -> Right click -> properties -> Adv System Settings -> Environment variables
+#### For windows
+- Download archive from above [download table](#download) or using curl
+- Extract the archive
+- Set path variable to extracted folder's bin folder in environment variables
+This can be done by navigating to `This PC -> Right click -> properties -> Adv System Settings -> Environment variables` \
+OR  
+`setx /M PATH "%PATH%;<CLI's bin folder's path>"`
 
 ### Proxy
 
@@ -87,22 +95,46 @@ Try to run following command in your terminal
 ```bash
 tibco --version
 ```
+## Command Format
+```
+tibco <plugin name>:<command>  [flags] <args> 
+```
+
+For E.g:
+```
+tibco asyncapi:transform --to flogo --from ./myasyncapi.yml
+```
+
+### Flags
+For long flags use `--`  \
+For short flags use `-`  \
+Flags can be mentioned in multiple ways \ 
+```
+tibco apps:create --name myNodeJsAPP
+tibco apps:create --name=myNodeJsAPP
+tibco apps:create -n myNodeJsAPP
+tibco apps:create -n=myNodeJsAPP --force
+```
+> **_NOTE:_** Values (true | false) should not be passed when flags are boolean. Parser will consider that true | false as command arguements. 
+
 
 ## Configure CLI
 
 Configure your CLI so that you can interact with TIBCO Cloud.\
-Start with following command:
+Start with the below command:
 
 ```bash
-tibco profile:initialize
+tibco profiles:initialize
 ```
 
-This will walk you through authentication process and will generate default CLI profile.
-Profile in CLI is a set of congfigurations clubbed together. You can create multiple profiles.
-Whenever command is executed it picks up the configuration based on a default profile or the one mentioned in command.\
-Currently the TIBCO Cloud organizations and regions are tied to the profile. If you need to switch to different org or region quickly then you need to add profile to the CLI configuration once.
-Then while executing commands just need to pass the profile name as a command option.
-Profile E.g:
+This will walk you through authentication process and will generate default CLI profile. \
+Profile in CLI is a set of configurations clubbed together (currently org and region). You can create multiple profiles. \
+Whenever command is executed it picks up the configuration based on the profile mentioned in command or the default profile. \
+Currently the TIBCO Cloud organizations and regions are tied to the profile. \
+If you need to switch to different org or region then you need to add profile to the CLI configuration. This can be done using command `tibco profiles:add`. \
+Then while executing commands just need to pass the profile name as a command option.  \
+For e.g `tibco tcam:list-apis --profile eu-user` \
+Profiles data is stored as json in below format. \
 
 ```json
 [
@@ -119,26 +151,26 @@ Profile E.g:
 ]
 ```
 
-This configuration is stored at:
+This file is located at:
 
 `~/.config/@tibco/cic-cli-main/profiles.json (Linux & Mac)`\
 OR  
 `%USERPROFILE%\.config\@tibco\cic-cli-main\profiles.json (Windows)`
 
-To see all commands on configuration and profile management, check this link - [config](./docs/profiles.md)
+To see all commands on **profile management**, check this link - [profiles](./docs/profiles.md)
 
 ### Confidentials
 
 Confidential data like tokens, refresh tokens and client secret are stored at:
 
-- Keychain for MacOS
+- Keychain for macOS
 - Credential vault for Windows
 - Libsecret for Linux
 
 ## Comman Command Flags
 
-These flags are availabe to most commands of CLI.
-These may be disabled for specific commands.
+Common flags are availabe to most of the commands of CLI. \
+They may be disabled for specific commands.  \
 
 ### --profile <string>
 
@@ -166,18 +198,20 @@ See all flags and arguments for the corresponding command.
 For E.g:
 
 ```
-tibco asyncapi:transform help
+tibco asyncapi:transform --help
 ```
 
 ## Plugins
 
 This CLI has a plugin-based architecture, that can be extended by creating plugins.\
-Currently, we have a single plugin [Asyncapi](https://asyncapi.io/), which is helpful to transform your asyncapi spec into sample flogo template.\
-Plugin information can be found here [@tibco-software/cic-cli-plugin-asyncapi](https://www.npmjs.com/package/@tibco/cli-plugin-asyncapi)
+Plugins developed by us so far:
+| Name                                                                                                | Description                                                                               |
+|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| [cli-plugin-asyncapi](https://www.npmjs.com/package/@tibco/cli-plugin-asyncapi) | This plugin is helpful to transform your asyncapi spec(2.1.0) into sample flogo template. |
 
 ## Developers
 
-If you are interested to develop some CLI plugin and attach it to CLI. Checkout [oclif](https://oclif.io) plugin dev, as this CLI is based on oclif framework. While development use this package [@tibco-software/cic-cli-core](https://www.npmjs.com/package/@tibco/cic-cli-core) as it will ease your development of commands to certain extent.
+If you are interested to develop some CLI plugin and attach it to CLI. Checkout [oclif](https://oclif.io) plugin dev, as this CLI is based on oclif framework. While development use this package [@tibco-software/cic-cli-core](https://www.npmjs.com/package/@tibco-software/cic-cli-core) as it will ease your development of commands to certain extent.
 
 ## Issues
 

@@ -20,9 +20,9 @@ const allScopes = CONFIG.SCOPES;
 
 let auth: CLIAuth;
 export default class ConfigInitialize extends TCBaseCommand {
-  static description = 'Initialize CLI';
+  static description = 'Initialize CLI and create default profile';
 
-  static aliases = ['config:init'];
+  static aliases = ['profiles:init'];
 
   static flags = {
     ...TCBaseCommand.flags,
@@ -55,7 +55,7 @@ export default class ConfigInitialize extends TCBaseCommand {
 
     this.log(
       `\n${chalk.yellow(
-        '[Note] Please open below link with incognito mode of browser if currently opened browser has already logged in to the TIBCO Cloud.'
+        '[Note] Please open below link on the browser. (Use private browser if currently opened browser has already logged in to the TIBCO Cloud)'
       )}\n`
     );
 

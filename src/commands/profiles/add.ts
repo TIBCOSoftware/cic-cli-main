@@ -47,7 +47,7 @@ export default class ConfigAddProfile extends TCBaseCommand {
 
     this.log(
       `\n${chalk.yellow(
-        '[Note] Please open below link with incognito mode of browser if currently opened browser has already logged in to the TIBCO Cloud.'
+        '[Note] Please open below link on the browser. (Use private browser if currently opened browser has already logged in to the TIBCO Cloud)'
       )}\n`
     );
 

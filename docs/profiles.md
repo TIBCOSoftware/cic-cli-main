@@ -26,7 +26,7 @@ _See code: [src/commands/profiles/add.ts](https://github.com/TIBCOSoftware/cic-c
 
 ## `tibco profiles:initialize`
 
-Initialize CLI
+Initialize CLI and create default profile
 
 ```
 USAGE
@@ -36,7 +36,7 @@ OPTIONS
   --no-warnings  Disable warnings from commands outputs
 
 ALIASES
-  $ tibco config:init
+  $ tibco profiles:init
 ```
 
 _See code: [src/commands/profiles/initialize.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta/src/commands/profiles/initialize.ts)_
