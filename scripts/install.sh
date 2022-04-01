@@ -38,5 +38,5 @@ fi
 curl "https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/$BUILD_FILE"  -fsSL -O
 mkdir $APP_LOCN
 tar -xf $BUILD_FILE -C $APP_LOCN --strip-components 1
-echo "\\nexport PATH=\$PATH:$APP_LOCN/bin" >> $RCFILE
+echo "export PATH=\$PATH:$APP_LOCN/bin" >> $RCFILE
 echo "TIBCO Cloud CLI installed successfully!! Try running \"tibco\" on the new terminal"
