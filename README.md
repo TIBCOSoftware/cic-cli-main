@@ -182,7 +182,7 @@ Confidential data like tokens, refresh tokens and client secret are stored at:
 - Credential vault for Windows
 - Libsecret for Linux
 
-## Comman Command Flags
+## Common Command Flags
 
 Common flags are availabe to most of the commands of CLI. \
 They may be disabled for specific commands.
@@ -209,7 +209,6 @@ tibco asyncapi:transform --to flogo from ./spec.yml --no-warnings
 ### --help
 
 See all flags and arguments for the corresponding command.
-
 For E.g:
 
 ```
@@ -219,21 +218,32 @@ tibco asyncapi:transform --help
 ## Plugins
 
 This CLI has a plugin-based architecture, that can be extended by creating plugins.\
-Plugins developed by us so far:
+Below are the commands for managing plugins - 
+* [`tibco plugins`](./docs/plugins.md#tibco-plugins)
+* [`tibco plugins:inspect PLUGIN...`](./docs/plugins.md#tibco-pluginsinspect-plugin)
+* [`tibco plugins:install PLUGIN...`](./docs/plugins.md#tibco-pluginsinstall-plugin)
+* [`tibco plugins:link PLUGIN`](./docs/plugins.md#tibco-pluginslink-plugin)
+* [`tibco plugins:uninstall PLUGIN...`](./docs/plugins.md#tibco-pluginsuninstall-plugin)
+* [`tibco plugins:update`](./docs/plugins.md#tibco-pluginsupdate)
+
+Plugins developed:
 | Name                                                                                                | Description                                                                               |
 |-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| [cli-plugin-asyncapi](https://www.npmjs.com/package/@tibco-software/cli-plugin-asyncapi) | This plugin is helpful to transform your asyncapi spec(2.1.0) into sample flogo template. |
+| [cli-plugin-tcapim](https://github.com/TIBCOSoftware/tcapim-cli-plugin)     |  Plugin to create and manage TIBCO Cloud™ API Management applications. |
+| [cli-plugin-tcam](https://github.com/TIBCOSoftware/cic-cli-plugin-tcam)  |  Plugin to provide you the ability to run basic commands for TIBCO Cloud API Modeler features.
+| [cli-plugin-asyncapi](https://github.com/TIBCOSoftware/cic-cli-plugin-asyncapi) | Plugin to transform your AsyncAPI spec(2.1.0) into sample flogo template.|
 
 ## Developers
 
-If you are interested to develop some CLI plugin and attach it to CLI. Checkout [oclif](https://oclif.io) plugin dev, as this CLI is based on oclif framework. While development use this package [@tibco-software/cic-cli-core](https://www.npmjs.com/package/@tibco-software/cic-cli-core) as it will ease your development of commands to certain extent.
+If you are interested to develop some CLI plugin and attach it to CLI. Checkout [oclif](https://oclif.io) plugin dev, as this CLI is based on oclif framework.\
+While development use this package [@tibco-software/cic-cli-core](https://www.npmjs.com/package/@tibco-software/cic-cli-core) as it will ease your development of commands to certain extent.
 
 ## Known Issues
 
 ### For macOS
 
 #### Issue
-In case you get any of these below errors while `tibco profiles:initialize`
+In case you get any of these below errors while running command `tibco profiles:initialize`
 
 <div white-space="nowrap">
 <img src="./media/keytar-issue1.png" height="400"/>
@@ -244,7 +254,7 @@ In case you get any of these below errors while `tibco profiles:initialize`
 </div>
 
 #### Solution
-1. Navigate to the path `Apple menu->System Preferences->Security & Privacy->General`.
+1. Navigate to the path `Apple menu -> System Preferences -> Security & Privacy -> General`.
 2. Click on `Allow anyway` button.
 
 
