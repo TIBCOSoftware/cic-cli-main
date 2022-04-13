@@ -1,6 +1,11 @@
 # TIBCO Cloud™ CLI
 
-This CLI will help you to quickly interact with TIBCO Cloud™ capabilities using terminal and would provide simplicity to manage your local development and build environments.
+TIBCO Cloud™ CLI will help you to quickly interact with TIBCO Cloud™ capabilities and manage its resources from your machine. It will also help you to automate your tasks, manage local dev environments or can be a part of CI/CD pipeline.
+
+<img src="./media/cli.png">
+
+This CLI can be extended by creating plugins. Checkout plugins developed by TIBCO - [Plugins Developed](#plugins-developed). \
+You can also create custom CLI plugins for your use cases. For more details on developing plugins, see [Developers](#developers) section of the documentation.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -16,7 +21,13 @@ This CLI will help you to quickly interact with TIBCO Cloud™ capabilities usin
 6.  [Developers](#developers)
 7.  [Known Issues](#known-issues)
 8.  [Issues](#issues)
-7.  [License](#license) 
+9.  [License](#license) 
+
+
+
+
+
+
 ## Installation
 
 CLI is distributed using tarballs. Download tarball from below links based on your machine OS.
@@ -226,7 +237,7 @@ Below are the commands for managing plugins -
 * [`tibco plugins:uninstall PLUGIN...`](./docs/plugins.md#tibco-pluginsuninstall-plugin)
 * [`tibco plugins:update`](./docs/plugins.md#tibco-pluginsupdate)
 
-Plugins developed:
+#### Plugins developed
 | Name                                                                                                | Description                                                                               |
 |-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | [cli-plugin-tcapim](https://github.com/TIBCOSoftware/tcapim-cli-plugin)     |  Plugin to create and manage TIBCO Cloud™ API Management applications. |
