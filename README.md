@@ -256,21 +256,15 @@ While development use this package [@tibco-software/cic-cli-core](https://www.np
 #### Issue
 In case you get any of these below errors while running command `tibco profiles:initialize`
 
-<div white-space="nowrap">
-<img src="./media/keytar-issue1.png" height="400"/>
+<img src="./media/keytar-issue2.png" height="400" />
+<img src="./media/keytar-issue1.png" height="555" />
 
-
-
-<img src="./media/keytar-issue2.png" height="400" width ="280"/>
-</div>
 
 #### Solution
 1. Navigate to the path `Apple menu -> System Preferences -> Security & Privacy -> General`.
 2. Click on `Allow anyway` button.
 
-
-<img src="./media/keytar-soln.png" height="400"/>
-
+<img src="./media/keytar-soln.png" height="550"/>
 
 ## Issues
 
