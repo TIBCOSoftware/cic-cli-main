@@ -27,7 +27,7 @@ export default class ConfigRemoveProfile extends TCBaseCommand {
     let name = await ux.prompt('Name for the profile', 'input', args.name);
     let config = this.getProfileConfig();
 
-    config.removeProfile(name);
+    await config.removeProfile(name);
     this.saveProfileConfig(config);
     this.log('Profile removed successfully');
   }

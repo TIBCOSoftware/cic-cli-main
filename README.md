@@ -16,7 +16,7 @@ You can also create custom CLI plugins for your use cases. For more details on d
     5.  [Verify Installation](#verify-installation)
 2.  [Command Format](#command-format)
 3.  [Configure CLI](#configure-cli)
-4.  [Common Command Flags](#comman-command-flags)
+4.  [Common Command Flags](#common-command-flags)
 5.  [Plugins](#plugins)
 6.  [Developers](#developers)
 7.  [Known Issues](#known-issues)
