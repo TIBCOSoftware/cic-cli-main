@@ -7,8 +7,8 @@
   },
   "bugs": "https://github.com/TIBCOSoftware/cic-cli-main/issues",
   "dependencies": {
-    "@oclif/command": "^1.8.0",
-    "@oclif/config": "^1.17.0",
+    "@oclif/command": "^1.8.16",
+    "@oclif/config": "^1.18.3",
     "@oclif/plugin-help": "^3.2.2",
     "@oclif/plugin-plugins": "^1.10.1",
     "@tibco-software/cic-cli-core": "^1.0.0-beta.1",
@@ -42,7 +42,12 @@
       "@oclif/plugin-help",
       "@oclif/plugin-plugins"
     ],
-    "hooks": {}
+    "hooks": {},
+    "topics":{
+      "plugins":{ "descriptions": "Manage plugins of TIBCO Cloud CLI" },
+      "profiles":{ "descriptions": "Manage profiles of the CLI to interact with TIBCO Cloud" },
+      "config":{ "description": "Manage CLI config properties" }
+    }
   },
   "repository": "https://github.com/TIBCOSoftware/cic-cli-main/",
   "scripts": {

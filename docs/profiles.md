@@ -1,7 +1,7 @@
 `tibco profiles`
 ================
 
-Add profiles to the configuration
+
 
 * [`tibco profiles:add`](#tibco-profilesadd)
 * [`tibco profiles:initialize`](#tibco-profilesinitialize)
@@ -19,7 +19,8 @@ USAGE
   $ tibco profiles:add
 
 OPTIONS
-  --no-warnings  Disable warnings from commands outputs
+  --config=config  Path to the local config file
+  --no-warnings    Disable warnings from commands outputs
 ```
 
 _See code: [src/commands/profiles/add.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/add.ts)_
@@ -33,7 +34,8 @@ USAGE
   $ tibco profiles:initialize
 
 OPTIONS
-  --no-warnings  Disable warnings from commands outputs
+  --config=config  Path to the local config file
+  --no-warnings    Disable warnings from commands outputs
 
 ALIASES
   $ tibco profiles:init
@@ -50,7 +52,8 @@ USAGE
   $ tibco profiles:list
 
 OPTIONS
-  --no-warnings  Disable warnings from commands outputs
+  --config=config  Path to the local config file
+  --no-warnings    Disable warnings from commands outputs
 ```
 
 _See code: [src/commands/profiles/list.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/list.ts)_
@@ -64,6 +67,7 @@ USAGE
   $ tibco profiles:refresh-token
 
 OPTIONS
+  --config=config    Path to the local config file
   --no-warnings      Disable warnings from commands outputs
   --profile=profile  Switch to different org or region using profile
 ```
@@ -82,7 +86,8 @@ ARGUMENTS
   NAME  Name of the profile to be removed
 
 OPTIONS
-  --no-warnings  Disable warnings from commands outputs
+  --config=config  Path to the local config file
+  --no-warnings    Disable warnings from commands outputs
 ```
 
 _See code: [src/commands/profiles/remove.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/remove.ts)_
@@ -99,7 +104,8 @@ ARGUMENTS
   NAME  Profile name
 
 OPTIONS
-  --no-warnings  Disable warnings from commands outputs
+  --config=config  Path to the local config file
+  --no-warnings    Disable warnings from commands outputs
 ```
 
 _See code: [src/commands/profiles/set-default.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/set-default.ts)_

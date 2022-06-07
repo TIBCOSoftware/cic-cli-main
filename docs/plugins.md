@@ -1,7 +1,7 @@
 `tibco plugins`
 ===============
 
-list installed plugins
+Manage plugins of TIBCO Cloud CLI
 
 * [`tibco plugins`](#tibco-plugins)
 * [`tibco plugins:inspect PLUGIN...`](#tibco-pluginsinspect-plugin)
