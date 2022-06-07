@@ -10,7 +10,7 @@ Manage CLI config properties
 
 ## `tibco config:get PROPERTY`
 
-Get property value from configuration file
+Get property value from the configuration file
 
 ```
 USAGE
@@ -24,6 +24,9 @@ OPTIONS
   -l, --local      local config
   --config=config  Path to the local config file
   --no-warnings    Disable warnings from commands outputs
+
+EXAMPLE
+  tibco config:get tci.flogo.app-id
 ```
 
 _See code: [src/commands/config/get.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/config/get.ts)_
@@ -42,13 +45,18 @@ OPTIONS
   -l, --local      Print local config
   --config=config  Path to the local config file
   --no-warnings    Disable warnings from commands outputs
+
+EXAMPLES
+  tibco config:print --local
+  tibco config:print --json
+  tibco config:print --global
 ```
 
 _See code: [src/commands/config/print.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/config/print.ts)_
 
 ## `tibco config:set PROPERTY VALUE`
 
-Set a property in the configuration file
+Update or insert a property in the configuration file
 
 ```
 USAGE
@@ -63,6 +71,9 @@ OPTIONS
   -l, --local      local config
   --config=config  Path to the local config file
   --no-warnings    Disable warnings from commands outputs
+
+EXAMPLE
+  tibco config:set tci.flogo.trigger kafka --local
 ```
 
 _See code: [src/commands/config/set.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/config/set.ts)_
@@ -84,6 +95,9 @@ OPTIONS
   -y, --consent    Consent to delete the property
   --config=config  Path to the local config file
   --no-warnings    Disable warnings from commands outputs
+
+EXAMPLE
+  tibco config:unset tci.flogo.server --local --yes
 ```
 
 _See code: [src/commands/config/unset.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/config/unset.ts)_
