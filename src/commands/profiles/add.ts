@@ -41,17 +41,15 @@ export default class ConfigAddProfile extends TCBaseCommand {
 
     let region = await ux.promptChoices('Select region for default profile ', allRegions);
 
-    let scope = await ux.promptMultiSelectChoices('Scope of access for default profile', allScopes);
+    let scope = await ux.promptMultiSelectChoices(
+      'Domains that profile can access (Use space bar for selecting choices)',
+      allScopes
+    );
 
     let browserUrl = auth.getBrowserURL(scope, region, serverAddrs, config.clientID);
 
-    this.log(
-      `\n${chalk.yellow(
-        '[Note] Please open below link on the browser. (Use private browser if currently opened browser has already logged in to the TIBCO Cloud)'
-      )}\n`
-    );
-
-    this.log(browserUrl);
+    spinner.start('Opening Browser for Authentication');
+    await ux.open(browserUrl);
 
     let browserResponse = (await pEvent(event, 'onBrowserResponse', { multiArgs: true, timeout: 300000 }))[0];
 

@@ -23,13 +23,13 @@ OPTIONS
   -g, --global     global config
   -l, --local      local config
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 
 EXAMPLE
   tibco config:get tci.flogo.app-id
 ```
 
-_See code: [src/commands/config/get.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/config/get.ts)_
+_See code: [src/commands/config/get.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/config/get.ts)_
 
 ## `tibco config:print`
 
@@ -44,7 +44,7 @@ OPTIONS
   -j, --json       To print in JSON format
   -l, --local      Print local config
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 
 EXAMPLES
   tibco config:print --local
@@ -52,7 +52,7 @@ EXAMPLES
   tibco config:print --global
 ```
 
-_See code: [src/commands/config/print.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/config/print.ts)_
+_See code: [src/commands/config/print.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/config/print.ts)_
 
 ## `tibco config:set PROPERTY VALUE`
 
@@ -70,13 +70,13 @@ OPTIONS
   -g, --global     global config
   -l, --local      local config
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 
 EXAMPLE
   tibco config:set tci.flogo.trigger kafka --local
 ```
 
-_See code: [src/commands/config/set.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/config/set.ts)_
+_See code: [src/commands/config/set.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/config/set.ts)_
 
 ## `tibco config:unset PROPERTY`
 
@@ -94,10 +94,10 @@ OPTIONS
   -l, --local      Local config
   -y, --consent    Consent to delete the property
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 
 EXAMPLE
   tibco config:unset tci.flogo.server --local --yes
 ```
 
-_See code: [src/commands/config/unset.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/config/unset.ts)_
+_See code: [src/commands/config/unset.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/config/unset.ts)_

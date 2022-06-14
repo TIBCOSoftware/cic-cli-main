@@ -235,7 +235,7 @@ Below are the list of commands to manage profiles in the CLI -
 
 ### Configure Plugins
 
-There can be configurations which are plugin specific. These configurations are maintained in `tibco-cli-config.ini` file.
+Some plugins and topics might also need persistent configurations. These configurations are maintained in `tibco-cli-config.ini` file. \
 Every **section** and **subsection** of ini file represents configurations for **topics** and **subtopics** of the plugin respectively. Topics are set of commands grouped together in the plugin.  \
 E.g: suppose we have a plugin for TIBCO Cloud Integration and it has three topics flogo, nodejs and businessworks
 `tibco tci:flogo:<command>`  

@@ -1,7 +1,7 @@
 `tibco profiles`
 ================
 
-
+Manage profiles of the CLI to interact with the TIBCO Cloud
 
 * [`tibco profiles:add`](#tibco-profilesadd)
 * [`tibco profiles:initialize`](#tibco-profilesinitialize)
@@ -20,10 +20,10 @@ USAGE
 
 OPTIONS
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 ```
 
-_See code: [src/commands/profiles/add.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/add.ts)_
+_See code: [src/commands/profiles/add.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/profiles/add.ts)_
 
 ## `tibco profiles:initialize`
 
@@ -35,13 +35,13 @@ USAGE
 
 OPTIONS
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 
 ALIASES
   $ tibco profiles:init
 ```
 
-_See code: [src/commands/profiles/initialize.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/initialize.ts)_
+_See code: [src/commands/profiles/initialize.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/profiles/initialize.ts)_
 
 ## `tibco profiles:list`
 
@@ -53,10 +53,10 @@ USAGE
 
 OPTIONS
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 ```
 
-_See code: [src/commands/profiles/list.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/list.ts)_
+_See code: [src/commands/profiles/list.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/profiles/list.ts)_
 
 ## `tibco profiles:refresh-token`
 
@@ -68,11 +68,11 @@ USAGE
 
 OPTIONS
   --config=config    Path to the local config file
-  --no-warnings      Disable warnings from commands outputs
+  --no-warnings      Disable warnings from command's output
   --profile=profile  Switch to different org or region using profile
 ```
 
-_See code: [src/commands/profiles/refresh-token.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/refresh-token.ts)_
+_See code: [src/commands/profiles/refresh-token.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/profiles/refresh-token.ts)_
 
 ## `tibco profiles:remove [NAME]`
 
@@ -87,10 +87,10 @@ ARGUMENTS
 
 OPTIONS
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 ```
 
-_See code: [src/commands/profiles/remove.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/remove.ts)_
+_See code: [src/commands/profiles/remove.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/profiles/remove.ts)_
 
 ## `tibco profiles:set-default [NAME]`
 
@@ -105,7 +105,7 @@ ARGUMENTS
 
 OPTIONS
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from commands outputs
+  --no-warnings    Disable warnings from command's output
 ```
 
-_See code: [src/commands/profiles/set-default.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0-beta.1/src/commands/profiles/set-default.ts)_
+_See code: [src/commands/profiles/set-default.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/profiles/set-default.ts)_

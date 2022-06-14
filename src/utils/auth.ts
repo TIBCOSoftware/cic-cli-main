@@ -104,6 +104,7 @@ export class CLIAuth {
     url.searchParams.append('client_id', clientId);
     url.searchParams.append('code_challenge', this.codeChallenge);
     url.searchParams.append('code_challenge_method', this.codeChallengeMethod);
+    url.searchParams.append('prompt', 'login');
 
     return decodeURIComponent(url.href);
   }

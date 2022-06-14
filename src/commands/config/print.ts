@@ -40,22 +40,15 @@ export default class ConfigList extends BaseCommand {
   }
 
   printIni(data: string, heading: string) {
-    const headingHex = '#618a0f';
-    const valuesHex = '#618a0f';
-    const keysHex = '#015493';
+    this.log('*'.repeat(25) + heading + '*'.repeat(25));
+
     const regexHeading = /\[[^\]\r\n]+]/gm;
-
-    this.log(chalk.hex(headingHex)('*'.repeat(25) + heading + '*'.repeat(25)));
-
-    data = data.replaceAll(regexHeading, (val) => '[' + chalk.hex(headingHex)(val.substring(1, val.length - 1)) + ']');
+    data = data.replaceAll(regexHeading, (val) => '[' + chalk.green(val.substring(1, val.length - 1)) + ']');
 
     const regexKeyValues = /(?:\r?\n(?:[^[\r\n].*))/gm;
     data = data.replaceAll(
       regexKeyValues,
-      (val) =>
-        chalk.hex(keysHex)(val.substring(0, val.indexOf('='))) +
-        '=' +
-        chalk.hex(valuesHex)(val.substring(val.indexOf('=') + 1))
+      (val) => chalk.cyan(val.substring(0, val.indexOf('='))) + '=' + chalk.green(val.substring(val.indexOf('=') + 1))
     );
 
     // const regexOthers = /\=|\[|\]|"|\{|\}|\:/gm;
