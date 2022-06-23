@@ -59,7 +59,8 @@ fi
 
 
 download_link="https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/${build_file}"
-echo "Current machine is ${os} ${arch}.\nDownloading latest TIBCO Cloud™ CLI from ${download_link}"
+echo "Current machine is ${os} ${arch}."
+echo "Downloading latest TIBCO Cloud™ CLI from ${download_link}"
 curl ${download_link} -fsSL -o "/tmp/${build_file}"
 
 if [ $? -ne 0 ];
