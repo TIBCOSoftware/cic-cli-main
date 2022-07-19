@@ -80,7 +80,7 @@ export default class ConfigInitialize extends TCBaseCommand {
 
     spinner.start('Storing data...');
     this.storeConfigData(clientDetails, tokenInfo, region, org);
-    spinner.succeed('Intialization completed successfully');
+    spinner.succeed('Initialization completed successfully');
   }
 
   storeConfigData(clientInfo: RegisterClientResponse, tokenInfo: GenerateTokenResponse, region: region, org: string) {
