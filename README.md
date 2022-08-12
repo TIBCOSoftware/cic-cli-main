@@ -333,8 +333,9 @@ tibco asyncapi:transform --help
 
 ## Developers
 
-If you are interested to develop some CLI plugin and attach it to CLI. Checkout [oclif](https://oclif.io) plugin dev, as this CLI is based on oclif framework.\
-While development use this package [@tibco-software/cic-cli-core](https://www.npmjs.com/package/@tibco-software/cic-cli-core) as it will ease your development of commands to certain extent.
+- To create a CLI plugin checkout [oclif.io](https://oclif.io), since this CLI is based on oclif framework.
+- [Build Plugins on TIBCO Cloud CLI](https://www.walkthrough.so/pblc/niqkfEnGwRZM/build-plugins-for-tibco-cloud-tm-cli?sn=0) will guide you to develop your first sample plugin.
+- You will also need a [cli-core](https://github.com/TIBCOSoftware/cic-cli-core) package to get some features and utilities OOTB (it’s a must dependency).
 
 ## Known Issues
 
