@@ -10,6 +10,8 @@ import { TCBaseCommand, ux } from '@tibco-software/cic-cli-core';
 export default class ConfigSetDefaultProfile extends TCBaseCommand {
   static description = 'Change the default profile';
 
+  static aliases = ['profiles:use'];
+
   static flags = {
     ...TCBaseCommand.flags,
     profile: flags.string({ hidden: true }),

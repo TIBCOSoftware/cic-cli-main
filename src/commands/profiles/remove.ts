@@ -10,6 +10,8 @@ import { TCBaseCommand, ux } from '@tibco-software/cic-cli-core';
 export default class ConfigRemoveProfile extends TCBaseCommand {
   static description = 'Remove profiles from configuration';
 
+  static aliases = ['profiles:rm'];
+
   static flags = {
     ...TCBaseCommand.flags,
     profile: flags.string({ hidden: true }),

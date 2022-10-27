@@ -15,6 +15,8 @@ export default class ConfigProfiles extends TCBaseCommand {
     profile: flags.string({ hidden: true }),
   };
 
+  static aliases = ['profiles:ls'];
+
   async run() {
     let config = this.getProfileConfig();
     let displayProfiles: any[] = [];
