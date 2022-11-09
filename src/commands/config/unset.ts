@@ -14,7 +14,7 @@ export default class ConfigUnset extends BaseCommand {
     ...BaseCommand.flags,
     local: flags.boolean({ char: 'l', description: 'Local config', exclusive: ['global'] }),
     global: flags.boolean({ char: 'g', description: 'Global config', exclusive: ['local'] }),
-    consent: flags.boolean({ char: 'y', description: 'Consent to delete the property' }),
+    confirm: flags.boolean({ char: 'y', description: 'Confirmation to delete the property' }),
   };
 
   static args = [{ name: 'property', required: true, description: 'Property name' }];
@@ -22,8 +22,8 @@ export default class ConfigUnset extends BaseCommand {
   async run() {
     const { args, flags } = this.parse(ConfigUnset);
 
-    if (!flags.consent) {
-      let ans = await ux.promptChoices(`Are you sure you want to delete property ${args.property}?`, ['yes', 'no']);
+    if (!flags.confirm) {
+      let ans = await ux.promptChoices(`Do you want to delete the property ${args.property}?`, ['yes', 'no']);
       if (ans == 'no') return;
     }
 

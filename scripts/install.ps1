@@ -52,4 +52,4 @@ Remove-Item -Force -Path "$zipLocn"
 # reference -> https://stackoverflow.com/questions/714877/setting-windows-powershell-environment-variables
 [Environment]::SetEnvironmentVariable("Path", "$env:Path" + ";$installLocn\bin", [System.EnvironmentVariableTarget]::User)
 
-Write-Host "TIBCO Cloud CLI installed successfully!! Try running `"tibco`" on the new Powershell or Command Prompt"
+Write-Host "TIBCO Cloud CLI installed successfully! Try running 'tibco' on the new Powershell or Command Prompt"

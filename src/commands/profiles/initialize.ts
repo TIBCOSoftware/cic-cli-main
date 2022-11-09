@@ -20,7 +20,7 @@ const allScopes = CONFIG.SCOPES;
 
 let auth: CLIAuth;
 export default class ConfigInitialize extends TCBaseCommand {
-  static description = 'Initialize CLI and create default profile';
+  static description = 'Initialize the CLI and create your default profile';
 
   static aliases = ['profiles:init'];
 
@@ -36,24 +36,24 @@ export default class ConfigInitialize extends TCBaseCommand {
 
     auth = new CLIAuth(this.id, this.getPluginName());
 
-    spinner.start('Starting Local Server');
+    spinner.start('Starting the local Server');
     let serverAddrs = await auth.startLocalServer(event);
     spinner.succeed('Listening on ' + serverAddrs);
 
     spinner.start('Registering client...');
     let clientDetails = await auth.registerClient(serverAddrs);
-    spinner.succeed('Registered client');
+    spinner.succeed('Client registered');
 
-    let region = await ux.promptChoices('Select region for default profile ', allRegions);
+    let region = await ux.promptChoices('Select a region for the default profile', allRegions);
 
     let scope = await ux.promptMultiSelectChoices(
-      'Domains that profile can access (Use space bar for selecting choices)',
+      'Select domains the profile can access. (Use the spacebar to select)',
       allScopes
     );
 
     let browserUrl = auth.getBrowserURL(scope, region, serverAddrs, clientDetails.client_id);
 
-    spinner.start('Opening Browser for Authentication');
+    spinner.start('Opening browser for authentication');
     await ux.open(browserUrl);
 
     let browserResponse = (await pEvent(event, 'onBrowserResponse', { multiArgs: true, timeout: 300000 }))[0];
@@ -63,7 +63,7 @@ export default class ConfigInitialize extends TCBaseCommand {
       this.error(`${browserResponse.error}; ${browserResponse.error_description || ''}`);
     }
 
-    spinner.succeed('Authenticated Successfully');
+    spinner.succeed('Authenticated successfully');
     spinner.start('Generating token...');
     let tokenInfo = await auth.generateToken(
       clientDetails.client_id,
@@ -74,9 +74,9 @@ export default class ConfigInitialize extends TCBaseCommand {
     );
     spinner.succeed('Token generated');
 
-    spinner.start('Fetching org details');
+    spinner.start('Fetching organization details');
     let org = await auth.getOrg(tokenInfo.access_token, region);
-    spinner.succeed(`Chosen org or profile was ${org}`);
+    spinner.succeed(`Selected organization is ${org}`);
 
     spinner.start('Storing data...');
     this.storeConfigData(clientDetails, tokenInfo, region, org);
@@ -106,7 +106,7 @@ export default class ConfigInitialize extends TCBaseCommand {
   }
 
   async finally(err: Error) {
-    this.log('Shutting down local server');
+    this.log('Shutting down the local server');
     auth.stopLocalServer();
     return super.finally(err);
   }

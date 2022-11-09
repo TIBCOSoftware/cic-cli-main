@@ -10,6 +10,7 @@ export interface GenerateTokenResponse {
   expires_in: number;
   token_type: string;
   refresh_token_expires_in: number;
+  scope: string;
 }
 
 export interface RegisterClientResponse {

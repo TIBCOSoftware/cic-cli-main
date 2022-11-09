@@ -54,7 +54,7 @@ export class CLIAuth {
 
       if (queryParams.code) {
         res.writeHead(200);
-        res.end('Authenticated Sucessfully, please close the browser and switch back to command line');
+        res.end('Authenticated successfully. You can close the browser and return to the CLI.');
         event.emit('onBrowserResponse', { code: queryParams.code });
       } else if (queryParams.error) {
         res.writeHead(200);

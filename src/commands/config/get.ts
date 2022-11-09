@@ -7,7 +7,7 @@ import { flags } from '@oclif/command';
 import { BaseCommand, chalk } from '@tibco-software/cic-cli-core';
 
 export default class ConfigGet extends BaseCommand {
-  static description = 'Get property value from the configuration file';
+  static description = 'Get the property value from the configuration file';
   static examples = ['tibco config:get tci.flogo.app-id'];
   static flags = {
     ...BaseCommand.flags,

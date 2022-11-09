@@ -17,7 +17,7 @@ const allRegions = CONFIG.REGIONS;
 const allScopes = CONFIG.SCOPES;
 
 export default class ConfigAddProfile extends TCBaseCommand {
-  static description = `Add profiles to the configuration`;
+  static description = `Add profiles to your configuration`;
 
   static flags = {
     ...TCBaseCommand.flags,
@@ -27,28 +27,28 @@ export default class ConfigAddProfile extends TCBaseCommand {
   async run() {
     auth = new CLIAuth(this.id, this.getPluginName());
 
-    let name = await ux.prompt('Name for the profile', 'input');
+    let name = await ux.prompt('Profile name', 'input');
 
     let spinner = await ux.spinner();
 
     let event = new EventEmitter();
 
-    spinner.start('Starting Local Server');
+    spinner.start('Starting the local Server');
     let serverAddrs = await auth.startLocalServer(event);
     spinner.succeed('Listening on ' + serverAddrs);
 
     let config = this.getProfileConfig();
 
-    let region = await ux.promptChoices('Select region for default profile ', allRegions);
+    let region = await ux.promptChoices('Select a region for the default profile', allRegions);
 
     let scope = await ux.promptMultiSelectChoices(
-      'Domains that profile can access (Use space bar for selecting choices)',
+      'Select domains the profile can access. (Use the spacebar to select)',
       allScopes
     );
 
     let browserUrl = auth.getBrowserURL(scope, region, serverAddrs, config.clientID);
 
-    spinner.start('Opening Browser for Authentication');
+    spinner.start('Opening Browser for authentication');
     await ux.open(browserUrl);
 
     let browserResponse = (await pEvent(event, 'onBrowserResponse', { multiArgs: true, timeout: 300000 }))[0];
@@ -56,18 +56,18 @@ export default class ConfigAddProfile extends TCBaseCommand {
     if (browserResponse.error) {
       this.error(`${browserResponse.error}; ${browserResponse.error_description || ''}`);
     }
-    spinner.succeed('Authenticated Successfully');
+    spinner.succeed('Authenticated successfully');
     spinner.start('Generating token...');
     let cs = await secureStore.getClientSecret();
     if (cs == null) {
-      this.error('Client Secret could not be found');
+      this.error(`Client secret couldn't be found`);
     }
     let tokenInfo = await auth.generateToken(config.clientID, cs, serverAddrs, browserResponse.code, region);
     spinner.succeed('Token generated');
 
-    spinner.start('Fetching org details');
+    spinner.start('Fetching organization details');
     let org = await auth.getOrg(tokenInfo.access_token, region);
-    spinner.succeed(`Chosen Org for profile is ${org}`);
+    spinner.succeed(`Selected organization is ${org}`);
 
     let profile: Profile = {
       name: name,
@@ -85,11 +85,11 @@ export default class ConfigAddProfile extends TCBaseCommand {
     });
     this.saveProfileConfig(config);
 
-    spinner.succeed('Profile Added successfully');
+    spinner.succeed('Profile added successfully');
   }
 
   async finally() {
-    this.log('Shutting down local server');
+    this.log('Shutting down the local server');
     auth.stopLocalServer();
   }
 

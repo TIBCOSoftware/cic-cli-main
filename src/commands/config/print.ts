@@ -14,7 +14,7 @@ export default class ConfigList extends BaseCommand {
     ...BaseCommand.flags,
     local: flags.boolean({ char: 'l', description: 'Print local config', exclusive: ['global'] }),
     global: flags.boolean({ char: 'g', description: 'Print global config', exclusive: ['local'] }),
-    json: flags.boolean({ char: 'j', description: 'To print in JSON format' }),
+    json: flags.boolean({ char: 'j', description: 'Print in JSON format' }),
   };
 
   async run() {
@@ -26,7 +26,7 @@ export default class ConfigList extends BaseCommand {
         this.log(JSON.stringify(config.localConfig));
       } else {
         let configIni = ini.stringify(config.localConfig, { whitespace: true });
-        this.printIni(configIni, ' LOCAL CONFIG ');
+        this.printIni(configIni, ' Local config data ');
       }
     }
     if (!flags.local) {
@@ -34,7 +34,7 @@ export default class ConfigList extends BaseCommand {
         this.log(JSON.stringify(config.globalConfig));
       } else {
         let configIni = ini.stringify(config.globalConfig, { whitespace: true });
-        this.printIni(configIni, ' GLOBAL CONFIG ');
+        this.printIni(configIni, ' Global config data ');
       }
     }
   }

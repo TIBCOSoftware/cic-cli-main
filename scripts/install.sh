@@ -83,4 +83,4 @@ then
 fi
 
 rm -rf "/tmp/${build_file}"
-echo "TIBCO Cloud™ CLI installed successfully!! Try running \"tibco\" on the new terminal"
+echo "TIBCO Cloud™ CLI installed successfully! Try running 'tibco' on the new terminal"

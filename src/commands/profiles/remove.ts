@@ -8,7 +8,7 @@ import { flags } from '@oclif/command';
 import { TCBaseCommand, ux } from '@tibco-software/cic-cli-core';
 
 export default class ConfigRemoveProfile extends TCBaseCommand {
-  static description = 'Remove profiles from configuration';
+  static description = 'Remove profiles from the configuration';
 
   static aliases = ['profiles:rm'];
 
@@ -17,7 +17,7 @@ export default class ConfigRemoveProfile extends TCBaseCommand {
     profile: flags.string({ hidden: true }),
   };
 
-  static args = [{ name: 'name', description: 'Name of the profile to be removed' }];
+  static args = [{ name: 'name', description: 'Name of the profile to remove' }];
 
   async run() {
     const { args, flags } = this.parse(ConfigRemoveProfile);
@@ -26,7 +26,7 @@ export default class ConfigRemoveProfile extends TCBaseCommand {
       this._help();
     }
 
-    let name = await ux.prompt('Name for the profile', 'input', args.name);
+    let name = await ux.prompt('Profile name', 'input', args.name);
     let config = this.getProfileConfig();
 
     await config.removeProfile(name);

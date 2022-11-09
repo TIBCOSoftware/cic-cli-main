@@ -18,10 +18,7 @@ export default class ConfigRefreshToken extends TCBaseCommand {
 
     let config = this.getProfileConfig();
     if (!flags.profile || flags.profile === config.defaultProfile) {
-      let ans = await ux.promptChoices(
-        `Are you sure you want to refresh token for a default profile i.e ${config.defaultProfile}`,
-        ['yes', 'no']
-      );
+      let ans = await ux.promptChoices(`Do you want to refresh the token for the default profile?`, ['yes', 'no']);
       if (ans === 'no') {
         this.exit();
       }
@@ -33,7 +30,7 @@ export default class ConfigRefreshToken extends TCBaseCommand {
       this.error(`Profile ${flags.profile} not found`);
     }
 
-    this.log('Will refresh token only if it is expired');
+    this.log('Token will be refreshed only if it is expired');
     let req = this.getTCRequest();
     if (await req.getValidToken()) {
       this.log('Token refreshed sucessfully');

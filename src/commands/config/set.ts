@@ -7,17 +7,17 @@ import { flags } from '@oclif/command';
 import { BaseCommand, ux } from '@tibco-software/cic-cli-core';
 
 export default class ConfigSet extends BaseCommand {
-  static description = 'Update or insert a property in the configuration file';
+  static description = 'Insert or update a property in the configuration file';
   static examples = ['tibco config:set tci.flogo.trigger kafka --local'];
 
   static flags = {
     ...BaseCommand.flags,
-    local: flags.boolean({ char: 'l', description: 'local config', exclusive: ['global'] }),
-    global: flags.boolean({ char: 'g', description: 'global config', exclusive: ['local'] }),
+    local: flags.boolean({ char: 'l', description: 'Local config', exclusive: ['global'] }),
+    global: flags.boolean({ char: 'g', description: 'Global config', exclusive: ['local'] }),
   };
 
   static args = [
-    { name: 'property', required: true, description: 'Property Name' },
+    { name: 'property', required: true, description: 'Property name' },
     { name: 'value', required: true, description: 'Value of the property' },
   ];
 

@@ -22,7 +22,7 @@ export default class ConfigSetDefaultProfile extends TCBaseCommand {
   async run() {
     const { args } = this.parse(ConfigSetDefaultProfile);
     let config = this.getProfileConfig();
-    let name = await ux.prompt('Name for the profile', 'input', args.name);
+    let name = await ux.prompt('Profile name', 'input', args.name);
     let profile = config.getProfileByName(name);
     if (!profile) {
       this.log(`Profile ${name} does not exist`);
@@ -30,6 +30,6 @@ export default class ConfigSetDefaultProfile extends TCBaseCommand {
     }
     config.defaultProfile = name;
     this.saveProfileConfig(config);
-    this.log(`Default profile set to ${name}`);
+    this.log(`Default profile is set to ${name}`);
   }
 }
