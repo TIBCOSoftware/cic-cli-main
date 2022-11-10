@@ -1,23 +1,23 @@
 {
   "name": "@tibco-software/cic-cli-main",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "TIBCO Software",
   "bin": {
     "tibco": "./bin/run"
   },
   "bugs": "https://github.com/TIBCOSoftware/cic-cli-main/issues",
   "dependencies": {
-    "@oclif/command": "^1.8.16",
-    "@oclif/config": "^1.18.3",
-    "@oclif/plugin-help": "^3.2.2",
-    "@oclif/plugin-plugins": "^1.10.1",
-    "@tibco-software/cic-cli-core": "^1.0.0",
+    "@oclif/command": "^1.8.20",
+    "@oclif/config": "^1.18.6",
+    "@oclif/plugin-help": "^3.3.1",
+    "@oclif/plugin-plugins": "^1.10.11",
+    "@tibco-software/cic-cli-core": "^1.1.0",
     "p-event": "^4.2.0",
     "tslib": "^1.14.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
-    "@types/node": "^10.17.60",
+    "@types/node": "^16.11.7",
     "eslint": "^8.6.0",
     "globby": "^10.0.2",
     "ts-node": "^8.10.2",
@@ -45,10 +45,10 @@
     "hooks": {},
     "topics": {
       "plugins": {
-        "description": "Manage plugins of TIBCO Cloud CLI"
+        "description": "Manage plugins of the TIBCO Cloud CLI"
       },
       "profiles": {
-        "description": "Manage profiles of the CLI to interact with the TIBCO Cloud"
+        "description": "Manage CLI profiles for use with TIBCO Cloud"
       },
       "config": {
         "description": "Manage CLI config properties"
