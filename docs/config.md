@@ -10,7 +10,7 @@ Manage CLI config properties
 
 ## `tibco config:get PROPERTY`
 
-Get property value from the configuration file
+Get the property value from the configuration file
 
 ```
 USAGE
@@ -29,7 +29,7 @@ EXAMPLE
   tibco config:get tci.flogo.app-id
 ```
 
-_See code: [src/commands/config/get.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/config/get.ts)_
+_See code: [src/commands/config/get.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.1.0/src/commands/config/get.ts)_
 
 ## `tibco config:print`
 
@@ -41,7 +41,7 @@ USAGE
 
 OPTIONS
   -g, --global     Print global config
-  -j, --json       To print in JSON format
+  -j, --json       Print in JSON format
   -l, --local      Print local config
   --config=config  Path to the local config file
   --no-warnings    Disable warnings from command's output
@@ -52,23 +52,23 @@ EXAMPLES
   tibco config:print --global
 ```
 
-_See code: [src/commands/config/print.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/config/print.ts)_
+_See code: [src/commands/config/print.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.1.0/src/commands/config/print.ts)_
 
 ## `tibco config:set PROPERTY VALUE`
 
-Update or insert a property in the configuration file
+Insert or update a property in the configuration file
 
 ```
 USAGE
   $ tibco config:set PROPERTY VALUE
 
 ARGUMENTS
-  PROPERTY  Property Name
+  PROPERTY  Property name
   VALUE     Value of the property
 
 OPTIONS
-  -g, --global     global config
-  -l, --local      local config
+  -g, --global     Global config
+  -l, --local      Local config
   --config=config  Path to the local config file
   --no-warnings    Disable warnings from command's output
 
@@ -76,7 +76,7 @@ EXAMPLE
   tibco config:set tci.flogo.trigger kafka --local
 ```
 
-_See code: [src/commands/config/set.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/config/set.ts)_
+_See code: [src/commands/config/set.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.1.0/src/commands/config/set.ts)_
 
 ## `tibco config:unset PROPERTY`
 
@@ -92,7 +92,7 @@ ARGUMENTS
 OPTIONS
   -g, --global     Global config
   -l, --local      Local config
-  -y, --consent    Consent to delete the property
+  -y, --confirm    Confirmation to delete the property
   --config=config  Path to the local config file
   --no-warnings    Disable warnings from command's output
 
@@ -100,4 +100,4 @@ EXAMPLE
   tibco config:unset tci.flogo.server --local --yes
 ```
 
-_See code: [src/commands/config/unset.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.0.0/src/commands/config/unset.ts)_
+_See code: [src/commands/config/unset.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.1.0/src/commands/config/unset.ts)_

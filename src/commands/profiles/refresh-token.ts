@@ -4,7 +4,7 @@
  * in the license file that is distributed with this file.
  */
 
-import { ux, TCBaseCommand } from '@tibco-software/cic-cli-core';
+import { TCBaseCommand } from '@tibco-software/cic-cli-core';
 
 export default class ConfigRefreshToken extends TCBaseCommand {
   static description = 'Refresh a token for a profile';
@@ -17,13 +17,6 @@ export default class ConfigRefreshToken extends TCBaseCommand {
     const { flags } = this.parse(ConfigRefreshToken);
 
     let config = this.getProfileConfig();
-    if (!flags.profile || flags.profile === config.defaultProfile) {
-      let ans = await ux.promptChoices(`Do you want to refresh the token for the default profile?`, ['yes', 'no']);
-      if (ans === 'no') {
-        this.exit();
-      }
-    }
-
     let profile = config.getProfileByName(flags.profile);
 
     if (!profile) {

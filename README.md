@@ -8,28 +8,25 @@ This CLI can be extended by creating plugins. Checkout plugins developed by TIBC
 You can also create custom CLI plugins for your use cases. For more details on developing plugins, see [Developers](#developers) section of the documentation.
 
 ## Table of Contents
-1. [Installation](#installation)
+1. [Installing the CLI](#installing-the-cli)
     1.  [Prerequisites](#prerequisites)
-    2.  [Builds](#builds)
-    3. [Install using CLI](#install-using-cli)
-    4. [Install manually](#install-manually)
-    5. [Proxy Settings](#proxy)
-    6. [Verify Installation](#verify-installation)
-2.  [Command Format](#command-format)
-3.  [Plugins](#plugins)
-4.  [CLI configurations](#cli-configurations)
-    1.  [Configure Profiles](#configure-profiles)
-    2.  [Configure Plugins](#configure-plugins)
-5.  [Common Command Flags](#common-command-flags)
-6.  [Developers](#developers)
-7.  [Known Issues](#known-issues)
-8.  [Issues](#issues)
-9.  [License](#license) 
+    2. [Install via command](#install-via-command)
+    3. [Install manually](#install-manually)
+    4. [Proxy settings](#proxy)
+    5. [Verify installation](#verify-installation)
+2. [Updating the CLI](#updating-the-cli)
+3. [Uninstalling the CLI](#uninstalling-the-cli)
+4. [Command format](#command-format)
+5. [Configuring the CLI](#configuring-the-cli)
+6. [Plugins](#plugins)
+7. [Plugin configurations](#plugin-configurations)
+8.  [Common command flags](#common-command-flags)
+9.  [Developers](#developers)
+10.  [Known issues](#known-issues)
+11.  [Issues](#issues)
+12.  [License](#license) 
 
-## Installation
-
-CLI is distributed using tarballs. Download tarball from below links based on your machine OS.
-
+## Installing the CLI
 ### Prerequisites
 
 Should have libsecret installed for linux based machines. If not, use below commands -
@@ -38,16 +35,9 @@ Should have libsecret installed for linux based machines. If not, use below comm
 - Red Hat-based: `sudo yum install libsecret-devel`
 - Arch Linux: `sudo pacman -S libsecret`
 
-### Builds
+> **_NOTE:_**  You don't need above if you are not using profiles feature and just going to set the token as a environment variable or pass it via flag.
 
-
-| OS        |     Build      |
-| --------- | :-----------:  | 
-| Windows   | [tibco-cli-win-x86.zip](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-win-x86.zip)<br>[tibco-cli-win-x64.zip](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-win-x64.zip) | 
-| macOS     | [tibco-cli-mac-x64.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-mac-x64.tar.gz)<br> [tibco-cli-mac-arm.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-mac-arm.tar.gz)  |
-| Linux   | [tibco-cli-linux-x64.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-linux-x64.tar.gz)<br>[tibco-cli-linux-arm.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-linux-arm.tar.gz)|
-
-### Install using CLI
+### Install via command
 
 For **Linux and macOS**, run below command on your terminal
 
@@ -61,14 +51,22 @@ For **Windows**, run below command on your Windows powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/install.ps1'))
 ```
 
-### Install Manually
+### Install manually
 
-#### For Linux and macOS
+CLI is distributed using tarballs. Below are the builds of the tarball:
+
+
+| OS        |     Build      |
+| --------- | :-----------:  | 
+| Windows   | [tibco-cli-win-x86.zip](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-win-x86.zip)<br>[tibco-cli-win-x64.zip](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-win-x64.zip) | 
+| macOS     | [tibco-cli-mac-x64.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-mac-x64.tar.gz)<br> [tibco-cli-mac-arm.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-mac-arm.tar.gz)  |
+| Linux   | [tibco-cli-linux-x64.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-linux-x64.tar.gz)<br>[tibco-cli-linux-arm.tar.gz](https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/tibco-cli-linux-arm.tar.gz)|
+#### For linux and macOS
 
 - Download archive from below link
 
   ```bash
-  curl https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/{build name from builds table} -fsSL -O
+  curl https://github.com/TIBCOSoftware/cic-cli-main/releases/latest/download/{build name from the above table} -fsSL -O
   ```
 
 - Create a directory to keep installed CLI
@@ -107,7 +105,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://github.com/TIBCOS
   PATH=~/tibco-cli/bin:$PATH
   ```
 
-##### For Windows
+#### For windows
 
 
 - Download archive from above [download table](#download) or using curl
@@ -116,6 +114,8 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://github.com/TIBCOS
 This can be done by navigating to `This PC -> Right click -> properties -> Adv System Settings -> Environment variables` \
 OR  
 `setx /M PATH "%PATH%;<CLI's bin folder's path>"`
+
+> **_NOTE:_** You can use same above steps in case you want to update the CLI manually Or to update it with the specific version.
 
 ### Proxy
 
@@ -126,7 +126,7 @@ export http_proxy="http://PROXY_SERVER:PORT"
 export https_proxy="https://PROXY_SERVER:PORT"
 ```
 
-### Verify Installation
+### Verify installation
 
 Try to run following command in your terminal
 
@@ -134,7 +134,30 @@ Try to run following command in your terminal
 tibco --version
 ```
 
-## Command Format
+## Updating the CLI
+
+- If you have [installed CLI via the command](#install-via-command) mentioned above, then use same installation command to update the CLI.
+- If you have [installed CLI manually](#install-manually), then just download the latest CLI tarball and extract it to the same location (replace) where currently CLI resides.
+- Updating the CLI won’t uninstall your plugins.
+
+## Uninstalling the CLI
+
+**For MacOS and Linux**
+
+```bash
+tibco clean-all -—confirm
+rm -rf ~/tibco-cli     # delete the folder where the main CLI is installed. use `which tibco` to find where it resides.
+```
+
+**For Windows**
+
+```
+tibco clean-all --confirm
+rmdir /s/q %LOCALAPPDATA%\tibco-cli
+```
+
+
+## Command format
 
 Commands can have either of the below formats
 
@@ -179,38 +202,34 @@ tibco apps:create -n=myNodeJsAPP --force
 ```
 > **_NOTE:_** Values (true | false) should not be passed when flags are boolean. Parser will consider that true | false as command arguements. 
 
-## Plugins
+## Configuring the CLI
 
-This CLI has a plugin-based architecture, that can be extended by creating plugins.\
-Below are the commands for managing plugins - 
-* [`tibco plugins`](./docs/plugins.md#tibco-plugins)
-* [`tibco plugins:inspect PLUGIN...`](./docs/plugins.md#tibco-pluginsinspect-plugin)
-* [`tibco plugins:install PLUGIN...`](./docs/plugins.md#tibco-pluginsinstall-plugin)
-* [`tibco plugins:link PLUGIN`](./docs/plugins.md#tibco-pluginslink-plugin)
-* [`tibco plugins:uninstall PLUGIN...`](./docs/plugins.md#tibco-pluginsuninstall-plugin)
-* [`tibco plugins:update`](./docs/plugins.md#tibco-pluginsupdate)
+You can set up the CLI in either of the below ways to interact with the TIBCO Cloud:
 
-#### Plugins developed
-| Name                                                                                                | Description                                                                               |
-|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| [cli-plugin-tcapim](https://github.com/TIBCOSoftware/tcapim-cli-plugin)     |  Plugin to create and manage TIBCO Cloud™ API Management applications. |
-| [cli-plugin-tcam](https://github.com/TIBCOSoftware/cic-cli-plugin-tcam)  |  Plugin to provide you the ability to run basic commands for TIBCO Cloud API Modeler features.
-| [cli-plugin-asyncapi](https://github.com/TIBCOSoftware/cic-cli-plugin-asyncapi) | Plugin to transform your AsyncAPI spec(2.1.0) into sample flogo template.|
+1. [Set up the enivronment variable](#setting-up-the-environment-variable)
+2. [Pass the token and region flag to the command](#token-and-region-flags)
+3. [Configure and use CLI profiles](#configure-and-use-cli-profiles)
 
-## CLI Configurations
+### Setting up the environment variable
 
-There are two types of configurations in the CLI. Profile configuration and Plugin configuration.
+ Set the token and region of the TIBCO Cloud as a environment variable before running the CLI commands.  \
+ For token - `TIBCO_CLI_OAUTH_TOKEN`  \
+ For region - `TIBCO_REGION`
 
-### Configure Profiles
+### Token and region flags
 
-Configure profiles so that you can interact with TIBCO Cloud.\
-Start with the below command:
+Use `--token` and `--flags` while running every CLI commands.
+
+> **Note** Try to avoid this approach since passing the token flag on the terminal will save the token on the terminal's session history.
+
+### Configure and use CLI profiles
+
+Run the below command that will walk you through the authentication process of the TIBCO Cloud and will generate default CLI profile.
 
 ```bash
 tibco profiles:initialize
 ```
 
-This command will walk you through authentication process of the TIBCO Cloud and will generate default CLI profile.
 Profile is a set of configurations grouped together. Currently **org** and **region** of the TIBCO Cloud are grouped together under a profile.This help commands to identify where to interact in the TIBCO Cloud.
 
 
@@ -233,11 +252,31 @@ Below are the list of commands to manage profiles in the CLI -
 
 > **_NOTE:_** Profiles are expired if not used in 14 days. If profile is expired, delete it and create new profile with same name.
 
-### Configure Plugins
+## Plugins
+
+This CLI has a plugin-based architecture, that can be extended by creating plugins.\
+Below are the commands for managing plugins: 
+* [`tibco plugins`](./docs/plugins.md#tibco-plugins)
+* [`tibco plugins:inspect PLUGIN...`](./docs/plugins.md#tibco-pluginsinspect-plugin)
+* [`tibco plugins:install PLUGIN...`](./docs/plugins.md#tibco-pluginsinstall-plugin)
+* [`tibco plugins:link PLUGIN`](./docs/plugins.md#tibco-pluginslink-plugin)
+* [`tibco plugins:uninstall PLUGIN...`](./docs/plugins.md#tibco-pluginsuninstall-plugin)
+* [`tibco plugins:update`](./docs/plugins.md#tibco-pluginsupdate)
+
+#### Plugins developed
+| Name                                                                                                | Description                                                                               |
+|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| [cli-plugin-tcapim](https://github.com/TIBCOSoftware/tcapim-cli-plugin)     |  Plugin to create and manage TIBCO Cloud™ API Management applications. |
+| [cli-plugin-tcam](https://github.com/TIBCOSoftware/cic-cli-plugin-tcam)  |  Plugin to provide you the ability to run basic commands for TIBCO Cloud API Modeler features.
+| [cli-plugin-asyncapi](https://github.com/TIBCOSoftware/cic-cli-plugin-asyncapi) | Plugin to transform your AsyncAPI spec(2.1.0) into sample flogo template.|
+| [cli-plugin-tci-flogo](https://www.npmjs.com/package/@tibco-software/cli-plugin-tci-flogo) | Plugin to help you to perform the Flogo® specific tasks.|
+
+
+## Plugin configurations
 
 Some plugins and topics might also need persistent configurations. These configurations are maintained in `tibco-cli-config.ini` file. \
 Every **section** and **subsection** of ini file represents configurations for **topics** and **subtopics** of the plugin respectively. Topics are set of commands grouped together in the plugin.  \
-E.g: suppose we have a plugin for TIBCO Cloud Integration and it has three topics flogo, nodejs and businessworks
+E.g.: suppose we have a plugin for TIBCO Cloud Integration and it has three topics flogo, nodejs and businessworks
 `tibco tci:flogo:<command>`  
 `tibco tci:bw:<command>`  
 `tibco tci:node:<command>`
@@ -290,25 +329,42 @@ Confidential data like tokens, refresh tokens and client secret are stored at:
 - Credential vault for Windows
 - Libsecret for Linux
 
-## Common Command Flags
+## Common command flags
 
 Common flags are availabe to most of the commands of CLI. \
 They may be disabled for specific commands.
 
-### --profile <string>
+### --profile
 
 Use profile to quickly switch your configurations (Org or region).
 If no profile mentioned then default profile is considered.\
-For E.g:
+For E.g.:
 
 ```
 tibco tci:show-apps --profile eu-user
 ```
-### --config <string>
+
+### --token
+
+Pass the token flag to the command which interacts with TIBCO Cloud. This is alternative way to the profiles. \
+For E.g.:
+```
+tibco tci:show-apps --token CIC~asdfqwerty  --region eu
+```
+
+### --region
+
+Specify the region of the TIBCO Cloud. Use this flag along with the token flag.  \
+Possible values are us, eu and au.  \
+For E.g.:
+```
+tibco tci:show-apps --token CIC~asdfqwerty --region eu
+```
+
+### --config
 
 Path to the local config file if your cwd is not having `tibco-cli-config.ini` \
-For E.g:
-
+For E.g.:
 ```
 tibco asyncapi:transform --config $HOME/desktop/myconfig.ini
 ```
@@ -316,7 +372,7 @@ tibco asyncapi:transform --config $HOME/desktop/myconfig.ini
 ### --no-warnings
 
 Disable warnings from command outputs.\
-For E.g:
+For E.g.:
 
 ```
 tibco asyncapi:transform --to flogo from ./spec.yml --no-warnings
@@ -324,8 +380,8 @@ tibco asyncapi:transform --to flogo from ./spec.yml --no-warnings
 
 ### --help
 
-See all flags and arguments for the corresponding command.
-For E.g:
+See all flags and arguments for the corresponding command.  \
+For E.g.:
 
 ```
 tibco asyncapi:transform --help
@@ -337,7 +393,7 @@ tibco asyncapi:transform --help
 - [Build Plugins on TIBCO Cloud CLI](https://www.walkthrough.so/pblc/niqkfEnGwRZM/build-plugins-for-tibco-cloud-tm-cli?sn=0) will guide you to develop your first sample plugin.
 - You will also need a [cli-core](https://github.com/TIBCOSoftware/cic-cli-core) package to get some features and utilities OOTB (it’s a must dependency).
 
-## Known Issues
+## Known issues
 
 ### For macOS
 

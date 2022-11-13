@@ -48,7 +48,7 @@
         "description": "Manage plugins of the TIBCO Cloud CLI"
       },
       "profiles": {
-        "description": "Manage CLI profiles for use with TIBCO Cloud"
+        "description": "Manage CLI profiles for use with the TIBCO Cloud"
       },
       "config": {
         "description": "Manage CLI config properties"
