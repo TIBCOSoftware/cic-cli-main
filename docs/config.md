@@ -23,7 +23,7 @@ OPTIONS
   -g, --global     global config
   -l, --local      local config
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from command's output
+  --no-warnings    Disable warnings from command output
 
 EXAMPLE
   tibco config:get tci.flogo.app-id
@@ -44,7 +44,7 @@ OPTIONS
   -j, --json       Print in JSON format
   -l, --local      Print local config
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from command's output
+  --no-warnings    Disable warnings from command output
 
 EXAMPLES
   tibco config:print --local
@@ -70,7 +70,7 @@ OPTIONS
   -g, --global     Global config
   -l, --local      Local config
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from command's output
+  --no-warnings    Disable warnings from command output
 
 EXAMPLE
   tibco config:set tci.flogo.trigger kafka --local
@@ -94,7 +94,7 @@ OPTIONS
   -l, --local      Local config
   -y, --confirm    Confirmation to delete the property
   --config=config  Path to the local config file
-  --no-warnings    Disable warnings from command's output
+  --no-warnings    Disable warnings from command output
 
 EXAMPLE
   tibco config:unset tci.flogo.server --local --yes

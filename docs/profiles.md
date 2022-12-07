@@ -1,7 +1,7 @@
 `tibco profiles`
 ================
 
-Manage CLI profiles for use with TIBCO Cloud
+Manage CLI profiles for use with the TIBCO Cloud
 
 * [`tibco profiles:add`](#tibco-profilesadd)
 * [`tibco profiles:initialize`](#tibco-profilesinitialize)
@@ -20,9 +20,9 @@ USAGE
 
 OPTIONS
   --config=config    Path to the local config file
-  --no-warnings      Disable warnings from command's output
+  --no-warnings      Disable warnings from command output
   --region=us|eu|au  Region of the TIBCO Cloud.
-  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with this flag)
+  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with the token flag)
 ```
 
 _See code: [src/commands/profiles/add.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.1.0/src/commands/profiles/add.ts)_
@@ -37,9 +37,9 @@ USAGE
 
 OPTIONS
   --config=config    Path to the local config file
-  --no-warnings      Disable warnings from command's output
+  --no-warnings      Disable warnings from command output
   --region=us|eu|au  Region of the TIBCO Cloud.
-  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with this flag)
+  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with the token flag)
 
 ALIASES
   $ tibco profiles:init
@@ -57,9 +57,9 @@ USAGE
 
 OPTIONS
   --config=config    Path to the local config file
-  --no-warnings      Disable warnings from command's output
+  --no-warnings      Disable warnings from command output
   --region=us|eu|au  Region of the TIBCO Cloud.
-  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with this flag)
+  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with the token flag)
 
 ALIASES
   $ tibco profiles:ls
@@ -77,10 +77,10 @@ USAGE
 
 OPTIONS
   --config=config    Path to the local config file
-  --no-warnings      Disable warnings from command's output
-  --profile=profile  Switch to different org or region using profile.
+  --no-warnings      Disable warnings from command output
+  --profile=profile  Switch to a different organization or region using profile
   --region=us|eu|au  Region of the TIBCO Cloud.
-  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with this flag)
+  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with the token flag)
 ```
 
 _See code: [src/commands/profiles/refresh-token.ts](https://github.com/TIBCOSoftware/cic-cli-main/blob/v1.1.0/src/commands/profiles/refresh-token.ts)_
@@ -98,9 +98,9 @@ ARGUMENTS
 
 OPTIONS
   --config=config    Path to the local config file
-  --no-warnings      Disable warnings from command's output
+  --no-warnings      Disable warnings from command output
   --region=us|eu|au  Region of the TIBCO Cloud.
-  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with this flag)
+  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with the token flag)
 
 ALIASES
   $ tibco profiles:rm
@@ -121,9 +121,9 @@ ARGUMENTS
 
 OPTIONS
   --config=config    Path to the local config file
-  --no-warnings      Disable warnings from command's output
+  --no-warnings      Disable warnings from command output
   --region=us|eu|au  Region of the TIBCO Cloud.
-  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with this flag)
+  --token=token      OAuth token to interact with the TIBCO cloud.(Should pass region flag with the token flag)
 
 ALIASES
   $ tibco profiles:use
